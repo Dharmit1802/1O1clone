@@ -5,10 +5,12 @@ import AM from "../assets/AM.png";
 import SPG from "../assets/SPG.png";
 import LMB from "../assets/LMC.png";
 import EC from "../assets/EC.png";
+import ClientReview from './ClientReview';  
 
 function ChooseUs() {
   return (
-    <div className='relative bg-slate-900 w-full pt-10 pb-10 z-20 overflow-hidden'>
+    <div>
+    <div className='relative bg-slate-900 w-full pt-10 pb-24'>
         <div className='w-3/4 mx-auto text-white'>
             <a href='#' className='w-full block text-center rounded-md mb-10 md:mb-14 bg-red-700 font-bold text-md md:text-xl py-5'>A Complete Guide For Using The Live1O1 App - Watch The Videos</a>
             <p className='text-5xl font-bold mb-10 md:mb-14 '>Why Choose Live1O1</p>
@@ -57,8 +59,11 @@ function ChooseUs() {
                 
             </div>
 
+        <ClientReview/>
         </div>
-        <ChooseUs/>
+        
+    </div>
+    
     </div>
   )
 }

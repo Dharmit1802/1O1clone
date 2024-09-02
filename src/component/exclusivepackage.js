@@ -5,29 +5,53 @@ import "slick-carousel/slick/slick-theme.css";
 import SurpriseParty from "../assets/Surpriseparty.jpg";
 import Birthday from "../assets/birthdaypack.jpg";
 import Houseparty from "../assets/HouseParty.jpg";
+import { BsChevronCompactLeft } from "react-icons/bs";
+import { BsChevronCompactRight } from "react-icons/bs";
 
 function ExclusivePackage() {
+
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+    <button
+      {...props}
+      className={
+        "absolute z-10 top-1/2 left-0 transform -translate-y-1/2"
+      }
+    >
+      <BsChevronCompactLeft className="text-white stroke-1 w-auto text-3xl md:hidden -ml-[30px]"/>
+    </button>
+  );
+
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <button
+      {...props}
+      className={
+        "absolute z-10 top-1/2 right-0 transform -translate-y-1/2"
+      }
+    >
+      <BsChevronCompactRight className="text-white stroke-1 w-auto text-3xl md:hidden -mr-[30px]"/>
+    </button>
+  );
 
     const settings = {
         infinite: false,
         speed: 500,
         slidesToShow: 3,
+        prevArrow: <SlickArrowLeft className=""/>,
+        nextArrow: <SlickArrowRight />,
         responsive: [
           {
             breakpoint: 1150,
             settings: {
               slidesToShow: 3,
               slidesToScroll: 1,
-              infinite: true,
-            }
+            },
           },
           {
             breakpoint: 850,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 1,
-              infinite: true,
-            }
+              slidesToScroll: 1
+            },
           },
           {
             breakpoint: 750,
@@ -35,9 +59,9 @@ function ExclusivePackage() {
               slidesToShow: 1,
               slidesToScroll: 1,
               infinite: true,
-            }
-          }
-        ]
+            },
+          },
+        ],
     };
 
   return (

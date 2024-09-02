@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        '3xl': '0 0 30px 30px #d9d9d9',
+      }
+    },
     screens: {
       'sm': '750px',
       // => @media (min-width: 640px) { ... }
